@@ -1,5 +1,15 @@
 version '3'
 services:
   dev:
-    image: maven:latest
-    
+    build: dev1
+    volumes:
+      - magictube:/boxfuse/boxfuse-sample-java-war-hello/target:z
+
+  prod:
+    image: prod1
+    ports: 8080
+    volumes:
+      - magictube:/opt/tomcat/webapps/
+
+volumes:
+  magictube:
