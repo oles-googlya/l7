@@ -1,5 +1,4 @@
 ---
-version: '3'
 services:
   dev:
     build: dev1
@@ -13,5 +12,6 @@ services:
     volumes:
       - magictube:/opt/tomcat/webapps/
 
+version: '3'
 volumes:
   magictube:
