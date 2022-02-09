@@ -6,11 +6,13 @@ services:
       - magictube:/boxfuse/boxfuse-sample-java-war-hello/target:z
 
   prod:
-    image: prod1
+    build: prod1
     ports: 
       - "8080:8080"
     volumes:
       - magictube:/opt/tomcat/webapps/
+    depends_on:
+      - dev
 
 version: '3'
 volumes:
