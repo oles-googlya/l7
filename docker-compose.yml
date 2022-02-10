@@ -6,7 +6,7 @@ services:
       - magictube:/boxfuse/boxfuse-sample-java-war-hello/target:z
 
   prod:
-    image: tomcat:9.0-slim
+    image: tomcat:jre8-alpine
     ports: 
       - "8080:8080"
     volumes:
