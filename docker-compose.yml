@@ -6,12 +6,12 @@ services:
       - magictube:/boxfuse/boxfuse-sample-java-war-hello/target:z
 
   prod:
-    image: davidcaste/alpine-tomcat:tomcat8
+    image: tomcat9-slim
     ports: 
       - "8080:8080"
     volumes:
-      - magictube:/opt/tomcat/webapps:z
-    command: ["/opt/tomcat/bin/catalina.sh", "run"]
+      - magictube:/usr/local/tomcat/webapps:z
+    command: ["/usr/local/tomcat/bin/catalina.sh", "run"]
     depends_on:
       - dev
 
