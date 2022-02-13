@@ -1,20 +1,20 @@
 ---
+version: '3'
+
 services:
   dev:
     build: dev1
     volumes:
-      - magictube:/boxfuse/boxfuse-sample-java-war-hello/target:z
+      - magictube:/tmp/magictube:z
 
   prod:
-    image: tomcat:jre8-alpine
+    image: tomcat:9.0-alpine
     ports: 
       - "8080:8080"
     volumes:
       - magictube:/usr/local/tomcat/webapps:z
-    command: ["/usr/local/tomcat/bin/catalina.sh", "run"]
     depends_on:
       - dev
 
-version: '3'
 volumes:
   magictube:
