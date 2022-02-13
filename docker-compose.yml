@@ -5,16 +5,16 @@ services:
   dev:
     build: dev1
     volumes:
-      - magictube:/boxfuse-sample-java-war-hello/target
+      - tube:/boxfuse-sample-java-war-hello/target
 
   prod:
     image: tomcat:9.0-alpine
     ports: 
       - "8080:8080"
     volumes:
-      - magictube:/usr/local/tomcat/webapps
+      - tube:/usr/local/tomcat/webapps
     depends_on:
       - dev
 
 volumes:
-  magictube:
+  tube:
