@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get install -y git
 WORKDIR /root
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-WORKDIR /root/boxfuse/boxfuse-sample-java-war-hello
+WORKDIR /root/boxfuse-sample-java-war-hello
 RUN ls
 RUN mvn package
 WORKDIR /
