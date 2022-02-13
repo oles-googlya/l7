@@ -1,12 +1,8 @@
-FROM ubuntu:20.04
+FROM ubuntu:16.04
 RUN apt-get update && \
     apt-get install -y default-jdk && \
     apt-get install -y maven && \
-    apt-get install -y git
-WORKDIR /root
+    apt install -y git
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-RUN cd boxfuse-sample-java-war-hello && \
-    ls
-RUN ["mvn", "package"]
-WORKDIR /magictube 
-RUN mv /root/boxfuse-sample-java-war-hello/target/hello-1.0.war /magictube/
+WORKDIR github.com/boxfuse/boxfuse-sample-java-war-hello
+CMD [mvn, package]
