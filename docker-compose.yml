@@ -5,7 +5,7 @@ services:
   dev:
     build: dev1
     volumes:
-      - magictube:/tmp/magictube:z
+      - magictube:/boxfuse-sample-java-war-hello/target:z
 
   prod:
     image: tomcat:9.0-alpine
