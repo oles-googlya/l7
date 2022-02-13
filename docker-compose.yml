@@ -13,8 +13,6 @@ services:
       - "8080:8080"
     volumes:
       - tube:/usr/local/tomcat/webapps
-    depends_on:
-      - dev
-
+    
 volumes:
   tube:
