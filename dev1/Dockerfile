@@ -1,4 +1,5 @@
 FROM ubuntu:20.04
+ENV TZ=Europe/Moscow
 RUN apt-get update && \
     apt-get install -y default-jdk maven git
 WORKDIR /root
